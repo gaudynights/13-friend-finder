@@ -32,6 +32,23 @@ var friends=[
 "1",
 "1"
 ]
+},
+{
+// "friendID": "2",
+"name": "Crazy Barry",
+"photo": "http://www.wesleyan.edu/psyc/postersessions/poster2009/poster-session-23.jpg",
+"scores": [
+"5",
+"5",
+"5",
+"5",
+"5",
+"5",
+"5",
+"5",
+"5",
+"5"
+]
 }
 ];
 

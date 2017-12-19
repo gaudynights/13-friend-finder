@@ -208,11 +208,12 @@ console.log(newFriend);
 
       $.post("/api/friends", newFriend,
         function(data) {
-
+console.log("sending data to server");
           // let you know if the user was added to friend list
-          if (data) {
-            alert("added to friend list");
-          }
+          // if (data) {
+            // alert("added to friend list");
+            console.log(data.name);
+          // }
 
 
 
@@ -229,4 +230,7 @@ console.log(newFriend);
 </script>
 </div>
 </body>
+<footer>
+    <a href="../api/friends">Friends data</a>
+</footer>
 </html>
