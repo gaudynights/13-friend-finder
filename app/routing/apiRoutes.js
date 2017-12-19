@@ -6,7 +6,12 @@ module.exports=function(app){
     res.json(friends);
   });
 
-// maybe here is where i compare your results to friend results?
+// var friendCount=friends.length;
+
+// // maybe here is where i compare your results to friend results?
+// for (var i=0; i<friends.length;i++){
+
+// }
 
   app.post("/api/friends", function(req,res){
   	friends.push(req.body);
