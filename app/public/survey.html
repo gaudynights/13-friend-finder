@@ -36,7 +36,7 @@
 
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q01">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q01">Question 1: It stresses you out if you haven't had a haircut this week </label>
   <div class="col-md-3">
     <select id="q01" name="q01" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -49,7 +49,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q02">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q02">Question 2: You love your cat </label>
   <div class="col-md-3">
     <select id="q02" name="q02" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -62,7 +62,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q03">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q03">Question 3: You don't take Lyfts </label>
   <div class="col-md-3">
     <select id="q03" name="q03" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -75,7 +75,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q04">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q04">Question 4: You like pizza </label>
   <div class="col-md-3">
     <select id="q04" name="q04" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -88,7 +88,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q05">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q05">Question 5: You work out a lot </label>
   <div class="col-md-3">
     <select id="q05" name="q05" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -101,7 +101,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q06">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q06">Question 6: You are regular </label>
   <div class="col-md-3">
     <select id="q06" name="q06" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -114,7 +114,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q07">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q07">Question 7: You would rather dance than fight </label>
   <div class="col-md-3">
     <select id="q07" name="q07" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -127,7 +127,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q08">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q08">Question 8: You called your mom recently</label>
   <div class="col-md-3">
     <select id="q08" name="q08" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -140,7 +140,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q09">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q09">Question 9: It's been too long since your last pedicure </label>
   <div class="col-md-3">
     <select id="q09" name="q09" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -153,7 +153,7 @@
 </div>
 
 <div class="form-group">
-  <label class="col-md-8 control-label" for="q10">Question QUESTIONTEXT xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx </label>
+  <label class="col-md-8 control-label" for="q10">Question 10: You are a wizard </label>
   <div class="col-md-3">
     <select id="q10" name="q10" class="form-control question">
       <option value="1">1 (Strongly agree)</option>
@@ -176,24 +176,48 @@
 </fieldset>
 </form>
 
+
+<!-- Modal -->
+<div id="match-modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Barry Found!</h4>
+      </div>
+      <div class="modal-body">
+        <p>This Barry is best for you!</p>
+        <img id="match-image" src="https://emojipedia-us.s3.amazonaws.com/thumbs/160/apple/81/woman-shrugging_1f937-200d-2640-fe0f.png" style="width:300px">
+        <h2 id="match-name"></h2>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <script type="text/javascript">
   
     $("#submit-button").on("click", function(event) {
       event.preventDefault();
-      $.ajaxSetup({ traditional: true });
+
 
       // Here we grab the form elements
       var newScores=[];
 
        $(".question").each(function(){
-        // console.log(this.value);
+
         newScores.push(this.value);
        });
-        // console.log(newScores);
+
 
       
 var newFriend={
-// friendID: ,
+
 name: $("#user-name").val().trim(),
 photo: $("#photo-url").val().trim(),
 scores: newScores
@@ -201,27 +225,17 @@ scores: newScores
 
 console.log(newFriend);
 
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
-
       $.post("/api/friends", newFriend,
         function(data) {
 console.log("sending data to server");
-          // let you know if the user was added to friend list
-          // if (data) {
-            // alert("added to friend list");
+
             console.log(data.name);
-          // }
 
+          $("#match-name").text(data.name);
+          $('#match-image').attr("src", data.photo);
 
+          $("#match-modal").modal('toggle');
 
-          // // Clear the form when submitting
-          // $("#reserve-name").val("");
-          // $("#reserve-phone").val("");
-          // $("#reserve-email").val("");
-          // $("#reserve-unique-id").val("");
 
         });
 

@@ -17,7 +17,8 @@ module.exports=function(app){
   
   	// compare your results to friend results
   	// cycle through each friend in the array
-  	for (var i=0; i<friends.length-1;i++){
+  	// I only want my app to match you with the preset friends(barrys), not other people who have used the app, so I set the i limit to 10 instead of friends.length-1
+  	for (var i=0; i<10;i++){
   		var sum=0;
   		// cycle through each score in that friends array and new user array
   		for (var j=0;j<friends[i].scores.length;j++){
